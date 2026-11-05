@@ -194,6 +194,7 @@ img {
 
 .site-header--home .logo-mark {
   background: linear-gradient(135deg, var(--orange) 0%, var(--orange) 50%, var(--white) 50%, var(--white) 100%);
+
 }
 
 .site-header--home .container {
@@ -201,7 +202,7 @@ img {
 }
 
 .site-header--home nav {
-  min-width: 0;
+  min-width: 200px;
 }
 
 .site-header--home .nav-links {
@@ -746,7 +747,42 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 980px) {
+
+  .playbook-grid {
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .card{
+    flex-direction: column;
+  }
+
+  .site-header--home .hide{
+  display:none;
+  }
+  .hero-actions {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .logo-mark{
+    width:30px;
+    height:30px;
+  }
+
+  .hero-inner {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+  .hero-media {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
+
   h1 {
     font-size: 40px;
   }
@@ -781,9 +817,19 @@ img {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .site-header--home a{
+  font-size: small;
+  font-weight:bold;
+}
+
+  .site-header--home a:hover{
+    text-decoration: underline;
+  }
+
   h1 {
     font-size: 34px;
   }
