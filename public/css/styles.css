@@ -212,18 +212,19 @@ img {
 
 .site-header--home .logo-mark {
   background: linear-gradient(135deg, var(--orange) 0%, var(--orange) 50%, var(--white) 50%, var(--white) 100%);
+
 }
 
 .site-header--home .container {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .site-header--home nav {
-  min-width: 0;
+  min-width: 200px;
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0;
 }
 
@@ -764,6 +765,53 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 980px) {
+  .playbook-grid {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 28px;
+  }
+
+  
+  
+  .card{
+    flex-direction: column;
+  }
+
+
+  .hero-actions {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .logo-mark{
+    width:30px;
+    height:30px;
+  }
+
+  .hero-inner {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+
+  .hero-media {
+    width: 100%;
+  }
+}
+
+@media (max-width: 668px) {
+
+  .playbook-grid {
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(1, 2fr);
+    gap: 28px;
+  }
+  .site-header--home .btn{
+    margin-top:10px;
+  }
+
 @media (max-width: 768px) {
   .hero-inner {
     display: flex;
@@ -782,7 +830,7 @@ img {
   }
 
   .feature-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: 32px;
     margin-bottom: 64px;
   }
@@ -803,9 +851,19 @@ img {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .site-header--home a{
+  font-size: small;
+  font-weight:bold;
+}
+
+  .site-header--home a:hover{
+    text-decoration: underline;
+  }
+
   h1 {
     font-size: 34px;
   }
