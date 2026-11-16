@@ -29,6 +29,14 @@
   --radius: 14px;
 }
 
+#honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -880,3 +888,4 @@ img {
     grid-template-columns: 1fr;
   }
 }
+

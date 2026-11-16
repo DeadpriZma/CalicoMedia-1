@@ -1,9 +1,22 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
+const formLoadTime = Date.now();
 
 form.addEventListener('submit', async (event) => {
+
   event.preventDefault();
 
+  const honeypot = document.querySelector("#honeypot");
+  if (honeypot.value !==""){
+    return;
+  }
+
+  const submissionTime = Date.now();
+  const timeTaken = submissionTime - formLoadTime;
+  if (timeTaken < 3000) {
+    return;
+  }
+  
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;
   statusEl.textContent = '';
@@ -12,6 +25,7 @@ form.addEventListener('submit', async (event) => {
   const data = Object.fromEntries(new FormData(form));
 
   try {
+
     const response = await fetch('/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

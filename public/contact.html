@@ -37,6 +37,9 @@
     <section class="section">
       <div class="container contact-layout">
         <form class="contact-form" id="contact-form" action="/contact" method="post">
+
+          <input id="honeypot" type="text" name="Leave this empty" autocomplete="off" tabindex="-1"></input>
+
           <label for="name">Your name</label>
           <input type="text" id="name" name="name" required>
 
@@ -45,6 +48,7 @@
 
           <label for="message">How can we help?</label>
           <textarea id="message" name="message" required></textarea>
+
 
           <button class="btn" type="submit">Send message</button>
           <p class="form-status" id="form-status" role="status"></p>
